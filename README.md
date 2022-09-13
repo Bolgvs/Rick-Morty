@@ -1,4 +1,4 @@
 # Rick-Morty
 
 
-https://bolgvs.github.io/Rick-Morty/src/app/app.component.html  
+rick-morty-cxggry64v-bolgvs.vercel.app  
