@@ -1,0 +1,21 @@
+<div>
+  <h1>Characters</h1>
+</div>
+
+<div class="container" *ngIf="characters != null; else wait">
+  <div class="row">
+    <div class="col-2 m-5" *ngFor="let char of characters">
+      <div class="card d-flex flex-row" style="width: 18rem">
+        <div>
+          <img src="{{ char.image }}" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">{{ char.name }}</h5>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #wait>Waiting for data</ng-template>
