@@ -1,0 +1,39 @@
+<div style="width: 500px; margin: auto;">
+  <div *ngIf="currentCharacter" class="edit-form">
+    <h4>Character</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="currentCharacter.name" name="name" />
+      </div>
+      <div class="form-group">
+        <label for="description">Status</label>
+        <input type="text" class="form-control" id="status" [(ngModel)]="currentCharacter.status" name="status" />
+      </div>
+      <div class="form-group">
+        <label for="description">Species</label>
+        <input type="text" class="form-control" id="species" [(ngModel)]="currentCharacter.species" name="species" />
+      </div>
+      <div class="form-group">
+        <label for="description">Gender</label>
+        <input type="text" class="form-control" id="gender" [(ngModel)]="currentCharacter.gender" name="gender" />
+      </div>
+      <div class="form-group">
+        <label for="description">Origin</label>
+        <input type="text" class="form-control" id="origin" [(ngModel)]="currentCharacter.origin" name="origin" />
+      </div>
+      <div class="form-group">
+        <label for="description">Location</label>
+        <input type="text" class="form-control" id="location" [(ngModel)]="currentCharacter.location" name="location" />
+      </div>
+      <div class="form-group">
+        <label for="description">Image</label>
+        <input type="text" class="form-control" id="image" [(ngModel)]="currentCharacter.image" name="image" />
+      </div>
+    </form>
+    <button type="button" class="btn btn-danger" (click)="updateCharacter()">Actualizar</button>
+    <button type="button" class="btn btn-warning" (click)="deleteCharacter()">Borrar</button>
+  </div>
+  <br>
+  <h3>{{message}}</h3>
+</div>
