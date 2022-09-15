@@ -8,7 +8,7 @@ import { Observable, throwError } from 'rxjs';
 })
 export class CharacterService {
 
-  apiUrl: string = 'http://localhost:3000/characters';
+  apiUrl: string = 'https://serverrickymortynico.herokuapp.com/characters';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 

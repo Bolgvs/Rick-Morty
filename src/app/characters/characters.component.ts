@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { CharacterService } from 'src/app/service/character.service';
+import { Character } from '../model/character.model';
 
 @Component({
   selector: 'app-characters',
@@ -8,31 +9,24 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CharactersComponent implements OnInit {
 
-  title = 'characters';
+  characters?: Character[];
+  currentCharacter: Character = {};
+  currentIndex = -1;
+  name = '';
 
-  characters: any = null;
-
-  arr_numbers: any[] = new Array(8);
-
-  constructor(private http: HttpClient) {}
+  constructor(private characterService: CharacterService) { }
 
   ngOnInit(): void {
-    for (var index = 0; index < 8; index++) {
-      if (index < 5) {
-        this.arr_numbers[index] =
-          Math.floor(Math.random() * (800 - 1) + 1) + ',';
-      } else {
-        this.arr_numbers[index] = Math.floor(Math.random() * (800 - 1) + 1);
-      }
-    }
-
-    this.http
-      .get('https://rickandmortyapi.com/api/character/' + this.arr_numbers)
+    this.retrieveCharacters();
+  }
+  retrieveCharacters(): void {
+    this.characterService.list()
       .subscribe(
-        (result) => {
-          this.characters = result;
+        data => {
+          this.characters = data;
+          console.log(data);
         },
-        (error) => {
+        error => {
           console.log('not working');
         }
       );
