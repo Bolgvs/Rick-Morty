@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -12,6 +12,10 @@ import { CharacterComponent } from './character/character.component';
 import { AddCharactersComponent } from './crud/add-characters/add-characters.component';
 import { CharactersDetailsComponent } from './crud/characters-details/characters-details.component';
 import { CharactersListComponent } from './crud/characters-list/characters-list.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+
 
 
 @NgModule({
@@ -23,13 +27,17 @@ import { CharactersListComponent } from './crud/characters-list/characters-list.
     CharacterComponent,
     AddCharactersComponent,
     CharactersDetailsComponent,
-    CharactersListComponent
+    CharactersListComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

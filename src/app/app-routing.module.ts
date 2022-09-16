@@ -9,6 +9,9 @@ import { CharacterComponent } from './character/character.component';
 import { CharactersListComponent } from './crud/characters-list/characters-list.component';
 import { CharactersDetailsComponent } from './crud/characters-details/characters-details.component';
 import { AddCharactersComponent } from './crud/add-characters/add-characters.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -32,6 +35,10 @@ const routes: Routes = [
     component:AboutUsComponent
   },
   {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
     path: 'characters/list',
     component: CharactersListComponent,
   },
@@ -43,8 +50,15 @@ const routes: Routes = [
     path: 'add',
     component: AddCharactersComponent,
   },
+  {
+    path:'register',
+    component:  RegisterComponent
+  },
+  {
+    path:'login',
+    component:  LoginComponent
+  }
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
